@@ -1,89 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handball Scoresheet App</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Handball Scoresheet App&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="styles.css"&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="app"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Handball Scoresheet&lt;/h1&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Match Information --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Match Information&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" id="date" placeholder="Date"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" id="location" placeholder="Location"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" id="teamA" placeholder="Team A"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" id="teamB" placeholder="Team B"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Player List --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Team A Roster&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;table id="rosterA"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;tr&gt;&lt;th&gt;Number&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="addPlayer('rosterA')"&gt;Add Player&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Team B Roster&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;table id="rosterB"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;tr&gt;&lt;th&gt;Number&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Actions&lt;/th&gt;&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="addPlayer('rosterB')"&gt;Add Player&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Scorekeeping --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Scorekeeping&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Team A: &lt;span id="scoreA"&gt;0&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Team B: &lt;span id="scoreB"&gt;0&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Timer --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Timer&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p id="timer"&gt;30:00&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="startTimer()"&gt;Start&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Goalkeeper Stats --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Goalkeeper Stats&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="goalkeeperStats"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Shooter Stats --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Shooter Stats&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="shooterStats"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Export Options --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Export&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="exportData()"&gt;Export as CSV&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button onclick="emailData()"&gt;Email Data&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="app.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <div id="app">
+    <h1>Handball Scoresheet</h1>
+    
+    <!-- Match Information -->
+    <div class="section">
+      <h2>Match Information</h2>
+      <input type="text" id="date" placeholder="Date">
+      <input type="text" id="location" placeholder="Location">
+      <input type="text" id="teamA" placeholder="Team A" oninput="updateTeamName('teamA')">
+      <input type="text" id="teamB" placeholder="Team B" oninput="updateTeamName('teamB')">
+    </div>
+
+    <!-- Player List -->
+    <div class="section">
+      <h2 id="teamAName">Team A Roster</h2>
+      <table id="rosterA">
+        <tr><th>Number</th><th>Name</th><th>Actions</th></tr>
+      </table>
+      <button onclick="addPlayer('rosterA')">Add Player</button>
+    </div>
+    <div class="section">
+      <h2 id="teamBName">Team B Roster</h2>
+      <table id="rosterB">
+        <tr><th>Number</th><th>Name</th><th>Actions</th></tr>
+      </table>
+      <button onclick="addPlayer('rosterB')">Add Player</button>
+    </div>
+
+    <!-- Scorekeeping -->
+    <div class="section">
+      <h2>Scorekeeping</h2>
+      <p><span id="teamAScoreName">Team A</span>: <span id="scoreA">0</span></p>
+      <p><span id="teamBScoreName">Team B</span>: <span id="scoreB">0</span></p>
+    </div>
+
+    <!-- Timer -->
+    <div class="section">
+      <h2>Timer</h2>
+      <p id="timer">30:00</p>
+      <button onclick="startTimer()">Start</button>
+      <button onclick="stopTimer()">Stop</button>
+    </div>
+
+    <!-- Goalkeeper Stats -->
+    <div class="section">
+      <h2>Goalkeeper Stats</h2>
+      <div id="goalkeeperStats"></div>
+    </div>
+
+    <!-- Shooter Stats -->
+    <div class="section">
+      <h2>Shooter Stats</h2>
+      <div id="shooterStats"></div>
+    </div>
+
+    <!-- Export Options -->
+    <div class="section">
+      <h2>Export</h2>
+      <button onclick="exportData()">Export as CSV</button>
+      <button onclick="emailData()">Email Data</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
 </body>
 </html>
